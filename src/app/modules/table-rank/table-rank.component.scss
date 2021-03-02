@@ -1,0 +1,10 @@
+@import "../../../assets/styles/variables.scss";
+.table__home{
+    background-color: $azul-primario;
+    th, td{
+        border: none!important;
+    }
+    &.table-striped tbody tr:nth-of-type(odd) {
+        background-color: $azul-secundario;
+    }
+}
