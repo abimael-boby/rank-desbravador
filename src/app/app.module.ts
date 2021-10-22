@@ -6,16 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FilterTableComponent } from './shared/components/filter-table/filter-table.component';
 import { TableRankComponent } from './modules/table-rank/table-rank.component';
+import { UserDetailComponent } from './modules/user-detail/user-detail.component';
+import { TableConquestComponent } from './shared/components/table-conquest/table-conquest.component';
 
 const routes: Routes = [
   { path: 'first-component', component: TableRankComponent },
-  { path: 'second-component', component: FilterTableComponent },
+  { path: 'second-component', component: UserDetailComponent },
 ]; // sets up routes constant where you define your routes
 @NgModule({
   declarations: [
     AppComponent,
     FilterTableComponent,
-    TableRankComponent
+    TableRankComponent,
+    UserDetailComponent,
+    TableConquestComponent
   ],
   imports: [
     BrowserModule,
