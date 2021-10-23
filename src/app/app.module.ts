@@ -8,6 +8,8 @@ import { FilterTableComponent } from './shared/components/filter-table/filter-ta
 import { TableRankComponent } from './modules/table-rank/table-rank.component';
 import { UserDetailComponent } from './modules/user-detail/user-detail.component';
 import { TableConquestComponent } from './shared/components/table-conquest/table-conquest.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { HeaderModule } from './shared/components/header/header.module';
 
 const routes: Routes = [
   { path: 'first-component', component: TableRankComponent },
@@ -19,12 +21,14 @@ const routes: Routes = [
     FilterTableComponent,
     TableRankComponent,
     UserDetailComponent,
-    TableConquestComponent
+    TableConquestComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HeaderModule
   ],
   exports: [RouterModule],
   providers: [],
