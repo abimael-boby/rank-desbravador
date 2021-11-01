@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { DetailsRoutingModule } from './details-routing.module';
 import { DetailsComponent } from './details.component';
@@ -9,7 +10,8 @@ import { DetailsComponent } from './details.component';
   declarations: [DetailsComponent],
   imports: [
     CommonModule,
-    DetailsRoutingModule
+    DetailsRoutingModule,
+    SharedModule
   ]
 })
 export class DetailsModule { }

@@ -13,17 +13,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of [0,1,2,3]; let i = index">
+        <tr *ngFor="let item of employees$ | async; let i = index">
           <th scope="row">{{i+1}}</th>
-          <td>Mark</td>
+          <td>{{item.name}} {{item.lastName}}</td>
           <td>30%</td>
-          <td>3/10</td>
+          <td>{{item.email}}</td>
           <td>300</td>
-          <td>670</td>
+          <td>{{item.startDate}}</td>
           <td>
             <button (click)="onGoToEdit(item)" mat-stroked-button color="accent">Edit</button>
             <button (click)="onGoToSee(item)" mat-stroked-button color="accent">See</button>
-            <button (click)="onGoToDelete(item)" mat-stroked-button color="warn">Delete</button>
+            <button (click)="onGoToDelete(item.id)" mat-stroked-button color="warn">Delete</button>
           </td>
         </tr>
 

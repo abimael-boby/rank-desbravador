@@ -1,3 +1,4 @@
+import { EmployeesService } from './../employees.service';
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 
@@ -7,13 +8,15 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  employees$ = this.employeesSvc.employees;
   navigationExtras: NavigationExtras = {
     state: {
       value: null
     }
   };
 
-  constructor(private router: Router) { }
+
+  constructor(private router: Router, private employeesSvc: EmployeesService) { }
 
   ngOnInit(): void {
   }
@@ -25,9 +28,15 @@ export class ListComponent implements OnInit {
   onGoToSee(item: any): void {
     this.navigationExtras.state.value = item;
     this.router.navigate(['details'], this.navigationExtras);
-   }
-  onGoToDelete(item: any): void {
-    alert('Deleted');
+  }
+  async onGoToDelete(empId: string): Promise<void>{
+    console.log('entrou no delete list');
+    try {
+     await this.employeesSvc.onDeleteEmployees(empId);
+     alert('Deleted');
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 }

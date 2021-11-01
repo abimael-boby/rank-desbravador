@@ -132,6 +132,16 @@
               "devServerTarget": "desbrava-rank:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "desbrava-rank:build:production",
+            "firebaseProject": "shekinagrud",
+            "firebaseHostingSite": "shekinagrud"
+          }
         }
       }
     }

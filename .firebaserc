@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "shekinagrud": {
+      "hosting": {
+        "desbrava-rank": [
+          "shekinagrud"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "shekinagrud"
+  }
+}

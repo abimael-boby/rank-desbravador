@@ -1,0 +1,37 @@
+@import "/src/assets/styles/variables.scss";
+@import "/src/assets/styles/fonts.scss";
+
+.c-user{
+  padding: 10px;
+}
+.c-user__box{
+    background-color: $azul-primario;
+    color: #999;
+    border-radius: 4px;
+}
+
+.c-user__detail{
+    margin: 0px 10px;
+    width: 30%;
+    float: left;
+    .c-user__img{
+        margin-top: 20px;
+        img{
+          width: 80%;
+        }
+    }
+}
+
+.c-user__conquister{
+    margin: 0px 10px;
+    width: 65%;
+    float: right;
+    padding: 10px;
+}
+
+h2{
+   @include lato;
+   color: #fff;
+   font-weight: bold;
+   text-align: center;
+}

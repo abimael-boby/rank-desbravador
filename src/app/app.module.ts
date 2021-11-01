@@ -11,7 +11,15 @@ import { TableConquestComponent } from './shared/components/table-conquest/table
 import { HeaderComponent } from './shared/components/header/header.component';
 import { HeaderModule } from './shared/components/header/header.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
+import { SharedModule } from './shared/shared.module';
+
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+// import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+// import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+
+
 
 // const routes: Routes = [
 //   { path: '', component: TableRankComponent },
@@ -32,10 +40,11 @@ import { MatButtonModule } from '@angular/material/button';
     AppRoutingModule,
     HeaderModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    SharedModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   exports: [],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

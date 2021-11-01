@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-edit',
@@ -8,13 +8,10 @@ import { Router } from '@angular/router';
 })
 export class EditComponent implements OnInit {
 
-  value = null;
-  constructor(private router: Router) {
-    const navigation = this.router.getCurrentNavigation();
-    this.value = navigation?.extras?.state;
-  }
 
   ngOnInit(): void {
   }
+
+
 
 }

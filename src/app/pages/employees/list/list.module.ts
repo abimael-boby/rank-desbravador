@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 import { ListRoutingModule } from './list-routing.module';
 import { ListComponent } from './list.component';
@@ -12,8 +12,7 @@ import { ListComponent } from './list.component';
   imports: [
     CommonModule,
     ListRoutingModule,
-    MatButtonModule,
-    MatCheckboxModule
+    SharedModule
   ]
 })
 export class ListModule { }

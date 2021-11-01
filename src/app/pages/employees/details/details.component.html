@@ -1,1 +1,27 @@
-<p>details works!</p>
+<div class="c-user">
+  <div class="c-user__detail">
+      <div class="c-user__box">
+          <div class="c-user__title">
+              <h2>{{employee.name}} {{employee.lastName}}</h2>
+          </div>
+          <div class=" box-button"></div>
+          <div class=" box-dados">
+              <img src="../../../assets/img/amigo.png">
+          </div>
+          <div class=" box-skill"></div>
+      </div>
+
+      <div class="c-user__img c-user__box">
+          <img src="../../../assets/img/desbrava1.png">
+      </div>
+
+  </div>
+
+  <div class="c-user__conquister c-user__box">
+    Email:<h3>{{employee.email}}</h3>
+    Level:<h3>{{employee.startDate}}</h3>
+    <button (click)="onGoToEdit()" mat-raised-button >Edit</button>
+  </div>
+{{employee | json}}
+
+</div>
