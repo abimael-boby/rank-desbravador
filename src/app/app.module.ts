@@ -16,6 +16,9 @@ import { SharedModule } from './shared/shared.module';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AuthService } from './services/auth.service';
 // import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 // import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
@@ -33,7 +36,8 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
     TableRankComponent,
     UserDetailComponent,
     TableConquestComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -42,9 +46,10 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
     BrowserAnimationsModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   exports: [],
-  providers: [AngularFirestore],
+  providers: [AngularFirestore, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
