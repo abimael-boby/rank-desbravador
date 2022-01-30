@@ -16,7 +16,7 @@ export class EmployeesService {
   private employeeCollection: AngularFirestoreCollection<Employee>;
 
   constructor(private readonly afs: AngularFirestore) {
-    this.employeeCollection = afs.collection<Employee>('employees');
+    this.employeeCollection = afs.collection<Employee>('users');
     this.getEmployee();
     // this.employees = collectionData(xcollection);
   }

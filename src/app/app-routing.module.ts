@@ -5,9 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from '../app/shared/components/sign-in/sign-in.component';
 import { SignUpComponent } from '../app/shared/components/sign-up/sign-up.component';
 import { DashboardComponent } from '../app/shared/components/dashboard/dashboard.component';
-import { ForgotPasswordComponent } from '../app/shared/components/forgot-password/forgot-password.component';
 import { AuthGuard } from '../app/shared/guard/auth.guard';
-import { VerifyEmailComponent } from '../app/shared//components/verify-email/verify-email.component';
+import { ForgotPasswordComponent } from './shared/components/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: 'admin/list', loadChildren: () => import('./pages/employees/list/list.module').then(m => m.ListModule) },
@@ -18,13 +17,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'verify-email-address', component: VerifyEmailComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

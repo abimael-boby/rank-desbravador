@@ -34,10 +34,12 @@ export class AuthService {
 
   // Sign in with email/password
   SignIn(email, password) {
+    console.log('teste login email senha', email, password );
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
           this.router.navigate(['dashboard']);
+          console.log('passou da rota');
         });
         this.SetUserData(result.user);
       }).catch((error) => {
@@ -47,6 +49,7 @@ export class AuthService {
 
   // Sign up with email/password
   SignUp(email, password) {
+    console.log('teste create email senha', email, password );
     return this.afAuth.createUserWithEmailAndPassword(email, password)
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign
@@ -79,7 +82,7 @@ export class AuthService {
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
+    return (user !== null && user.uid === 'uFRHUMuVx7ay02wmingxBGWsVNw2') ? true : false;
   }
 
   // Sign in with Google
@@ -93,7 +96,8 @@ export class AuthService {
       .then((result) => {
         this.ngZone.run(() => {
           this.router.navigate(['dashboard']);
-        })
+          console.log('passou da rota google');
+        });
         this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error);
@@ -106,13 +110,14 @@ export class AuthService {
   // tslint:disable-next-line:typedef
   SetUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    console.log('teste user', user);
     const userData: User = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified
-    }
+    };
     return userRef.set(userData, {
       merge: true
     });

@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

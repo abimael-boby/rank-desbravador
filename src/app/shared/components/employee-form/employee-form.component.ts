@@ -27,6 +27,7 @@ export class EmployeeFormComponent implements OnInit {
       this.router.navigate(['new']);
     } else {
       this.employeeForm.patchValue(this.employee);
+      console.log('teste do edit', this.employee);
     }
   }
 
@@ -34,7 +35,7 @@ export class EmployeeFormComponent implements OnInit {
     console.log('Saved', this.employeeForm.value);
     if (this.employeeForm.valid) {
       const employee = this.employeeForm.value;
-      const employeeId = this.employee?.id || null;
+      const employeeId = this.employee?.uid || null;
       this.employeesSvc.onSaveEmployee(employee, employeeId);
       this.employeeForm.reset();
     }
