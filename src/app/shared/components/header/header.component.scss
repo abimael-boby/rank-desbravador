@@ -1,0 +1,10 @@
+.container-menu{
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #e5e5e5;
+  .container-master{
+    display: flex;
+    flex-direction: row;
+  }
+}

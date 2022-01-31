@@ -11,6 +11,11 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { RouterModule } from '@angular/router'; // CLI imports router
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
+import { MenuTopComponent } from './components/menu-top/menu-top.component';
+import { MenuPerfilComponent } from './components/menu-perfil/menu-perfil.component';
 
 
 
@@ -21,6 +26,11 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
+    FooterComponent,
+    HeaderComponent,
+    HeaderAdminComponent,
+    MenuTopComponent,
+    MenuPerfilComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +46,9 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     MatInputModule,
     MatDatepickerModule,
     EmployeeFormComponent,
-    RouterModule
+    RouterModule,
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
