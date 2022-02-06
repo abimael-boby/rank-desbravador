@@ -1,0 +1,29 @@
+.container-b-menu-top {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  margin-left: 30px;
+}
+.box-menu {
+  position: relative;
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    .b-img {
+      position: relative;
+      margin-right: 10px;
+      img {
+        opacity: 0.5;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        padding-right: 0px;
+      }
+    }
+  }
+}
+
+
