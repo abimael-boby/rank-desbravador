@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMenuModule } from '@angular/material/menu';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -16,7 +17,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
 import { MenuTopComponent } from './components/menu-top/menu-top.component';
 import { MenuPerfilComponent } from './components/menu-perfil/menu-perfil.component';
-
+import {MatSelectModule} from '@angular/material/select';
+import { ProfileFormComponent } from './components/profile-form/profile-form.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { MenuPerfilComponent } from './components/menu-perfil/menu-perfil.compon
     HeaderComponent,
     HeaderAdminComponent,
     MenuTopComponent,
-    MenuPerfilComponent
+    MenuPerfilComponent,
+    ProfileFormComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +41,9 @@ import { MenuPerfilComponent } from './components/menu-perfil/menu-perfil.compon
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    MatMenuModule,
+    MatSelectModule
   ],
   exports: [
     MatButtonModule,
@@ -48,7 +53,8 @@ import { MenuPerfilComponent } from './components/menu-perfil/menu-perfil.compon
     EmployeeFormComponent,
     RouterModule,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileFormComponent
   ]
 })
 export class SharedModule { }

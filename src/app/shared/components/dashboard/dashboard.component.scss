@@ -1,0 +1,11 @@
+
+span.blink{
+  animation: blink 1s linear infinite;
+  color: #fff;
+  font-weight: 700;
+}
+@keyframes blink{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
+}

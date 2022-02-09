@@ -20,6 +20,9 @@
         height: 30px;
         width: 30px;
         padding-right: 0px;
+        &.offActive{
+          display: none;
+        }
       }
     }
     .b-label{
@@ -29,6 +32,39 @@
     font-weight: 700;
     letter-spacing: 0.3px;
     transition: filter .2s;
+    }
+    &:hover{
+      .b-label{
+        color: #585858;
+        font-weight: bold;
+      }
+      // .b-img{
+      //   img{
+      //     &.offActive{
+      //       display: block;
+      //     }
+      //     &.onActive{
+      //       display: none;
+      //     }
+      //   }
+      // }
+
+    }
+    &.active{
+      .b-img{
+        img{
+          &.offActive{
+            display: block;
+          }
+          &.onActive{
+            display: none;
+          }
+        }
+      }
+      .b-label{
+        color: #585858;
+        font-weight: bold;
+      }
     }
   }
 }

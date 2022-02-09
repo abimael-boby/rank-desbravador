@@ -1,8 +1,9 @@
 <div class="container-b-menu-top">
   <div class="box-menu">
-    <a href>
+    <a [routerLink]="'/rank'" routerLinkActive="active">
       <div class="b-img">
-        <img src="../../../assets/img/rank.png" />
+        <img src="/assets/img/rank.png" class="onActive" />
+        <img src="/assets/img/rank2.png" class="offActive" />
       </div>
       <span class="b-label">CLASSIFICAÇÃO</span>
     </a>
@@ -11,9 +12,10 @@
 
   </div>
   <div class="box-menu">
-    <a href>
+    <a [routerLink]="'/patente'" routerLinkActive="active" >
       <div class="b-img">
-        <img src="../../../assets/img/patente.png" />
+        <img src="/assets/img/patente.png" class="onActive" />
+        <img src="/assets/img/patente2.png" class="offActive"/>
       </div>
       <span class="b-label">PATENTES</span>
     </a>
@@ -24,7 +26,8 @@
   <div class="box-menu">
     <a href>
       <div class="b-img">
-        <img src="../../../assets/img/pontos.png" />
+        <img src="/assets/img/pontos.png" class="onActive"/>
+        <img src="/assets/img/pontos2.png" class="offActive"/>
       </div>
       <span class="b-label">PONTUAÇÃO</span>
     </a>
@@ -35,7 +38,8 @@
   <div class="box-menu">
     <a href>
       <div class="b-img">
-        <img src="../../../assets/img/shop.png" />
+        <img src="/assets/img/shop.png" class="onActive"/>
+        <img src="/assets/img/shop2.png" class="offActive"/>
       </div>
       <span class="b-label">LOJA</span>
     </a>

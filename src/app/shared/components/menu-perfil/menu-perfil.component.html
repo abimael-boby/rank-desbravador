@@ -5,24 +5,15 @@
         <img src="../../../assets/img/diamantes.png" />
       </div>
     </a>
-
   </div>
-
-  <div class="box-menu">
-   <div ngbDropdown class="d-inline-block b-img">
-      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle> <img src="../../../assets/img/avatar.png" /></button>
-      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <button ngbDropdownItem>Action - 1</button>
-        <button ngbDropdownItem>Another Action</button>
-        <button ngbDropdownItem>Something else is here</button>
+  <div class="box-menu" *ngIf="authService.userData as user">
+    <a [routerLink]="'/dashboard'" routerLinkActive="active">
+      <div class="b-img">
+        <span class="profile">
+        <img  src="{{
+          user.photoURL ? user.photoURL : '/assets/img/avatar.png'
+        }}" /></span>
       </div>
-    </div>
+    </a>
   </div>
-
-
-
-
-
-
-
 </div>

@@ -4,6 +4,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Employee } from '../../models/Employee';
 
+interface Iasd {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-employee-form',
   templateUrl: './employee-form.component.html',
@@ -13,6 +18,14 @@ export class EmployeeFormComponent implements OnInit {
 
   employee: Employee;
   employeeForm: FormGroup;
+  iasds: Iasd[] = [
+    {value: 'etelvina', viewValue: 'Jd Etelvina'},
+    {value: 'aurora', viewValue: 'Jd Aurora'},
+    {value: 'robru', viewValue: 'Robrú'},
+  ];
+
+
+
   private isEmail = /\S+@\S+\.\S+/;
   constructor(private router: Router, private fb: FormBuilder, private employeesSvc: EmployeesService) {
     const navigation = this.router.getCurrentNavigation();
@@ -43,10 +56,18 @@ export class EmployeeFormComponent implements OnInit {
 
   private initForm(): void {
     this.employeeForm = this.fb.group({
-      name: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
+      uid: [''],
+      photoURL: [''],
+      isAnonymous: [''],
+      displayName: ['', [Validators.required]],
+      emailVerified: [''],
       email: ['', [Validators.required, Validators.pattern(this.isEmail)]],
-      startDate: ['', [Validators.required]],
+      igreja: ['', [Validators.required]],
+      dataNascimento: ['', [Validators.required]],
+      patente: [''],
+      adventista: ['', [Validators.required]],
+      camiseta: ['', [Validators.required]],
+      sanguinio: ['', [Validators.required]],
     });
   }
 

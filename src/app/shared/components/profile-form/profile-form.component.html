@@ -1,0 +1,102 @@
+<form
+  class="mt-3 col-md-8 offset-md-2"
+  [formGroup]="employeeForm"
+>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Nome</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="displayName"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Email</label>
+      <input
+        type="text"
+        [readonly]="true"
+        class="form-control"
+        formControlName="email"
+      />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Data Nascimento</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="dataNascimento"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>telefone</label>
+      <input type="tel" class="form-control" formControlName="telefone" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Tipo Sanguinio</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="sangue"
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+    </div>
+    <div class="form-group col-md-6">
+      <label>Tamanho Camiseta</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="camiseta"
+      />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>É Adventista?</label>
+      <div class="d-flex flex-row justify-content-around">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            formControlName="adventista"
+            name="adventista"
+            id="exampleRadios1"
+            value="sim"
+            checked
+          />
+          <label class="form-check-label" for="exampleRadios1"> Sim </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="adventista"
+            formControlName="adventista"
+            id="exampleRadios2"
+            value="não"
+          />
+          <label class="form-check-label" for="exampleRadios2"> Não </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Qual é a sua Igreja?</label>
+      <select class="form-control" formControlName="igreja">
+        <option [ngValue]="null" disabled>
+          Selecione a sua Igreja
+        </option>
+        <option *ngFor="let iasd of iasds" [ngValue]="iasd.value">
+          {{ iasd.viewValue }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <button type="button" (click)="onSave()" class="btn btn-primary btn-lg">Save</button>
+</form>
+<pre>{{ employeeForm.value | json }}</pre>

@@ -12,8 +12,10 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 })
 export class EmployeesService {
   employees: Observable<Employee[]>;
+  teste: any;
 
   private employeeCollection: AngularFirestoreCollection<Employee>;
+
 
   constructor(private readonly afs: AngularFirestore) {
     this.employeeCollection = afs.collection<Employee>('users');
@@ -32,6 +34,12 @@ export class EmployeesService {
       }
     });
   }
+
+  // tslint:disable-next-line:typedef
+  onLoadEmployees(empId: string): Observable<any>{
+    return this.employeeCollection.doc(empId).get();
+  }
+
 
   onSaveEmployee(employee: Employee, empId: string): Promise<void> {
     return new Promise(async (resolve, reject) => {

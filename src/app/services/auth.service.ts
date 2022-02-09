@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
 })
 
 export class AuthService {
+  user() {
+    throw new Error('Method not implemented.');
+  }
   userData: any; // Save logged in user data
 
   constructor(
@@ -127,6 +130,7 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
+      localStorage.removeItem('cadastrado');
       this.router.navigate(['sign-in']);
     });
   }

@@ -17,6 +17,8 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AuthService } from './services/auth.service';
+import { RankHomeComponent } from './pages/rank-home/rank-home.component';
+
 // import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 // import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
@@ -27,7 +29,8 @@ import { AuthService } from './services/auth.service';
     TableRankComponent,
     UserDetailComponent,
     TableConquestComponent,
-    AdminComponent
+    AdminComponent,
+    RankHomeComponent
   ],
   imports: [
     BrowserModule,
