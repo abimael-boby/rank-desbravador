@@ -18,6 +18,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AuthService } from './services/auth.service';
 import { RankHomeComponent } from './pages/rank-home/rank-home.component';
+import { SortByPipe } from './shared/utils/sort-by.pipe';
+import { PatentesComponent } from './pages/patentes/patentes.component';
 
 // import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 // import { provideFirestore, getFirestore } from '@angular/fire/firestore';
@@ -30,7 +32,9 @@ import { RankHomeComponent } from './pages/rank-home/rank-home.component';
     UserDetailComponent,
     TableConquestComponent,
     AdminComponent,
-    RankHomeComponent
+    RankHomeComponent,
+    SortByPipe,
+    PatentesComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { AuthGuard } from '../app/shared/guard/auth.guard';
 import { ForgotPasswordComponent } from './shared/components/forgot-password/forgot-password.component';
 import { RankHomeComponent } from './pages/rank-home/rank-home.component';
 import { EditProfileComponent } from './pages/profile/edit-profile/edit-profile.component';
+import { PatentesComponent } from './pages/patentes/patentes.component';
 
 const routes: Routes = [
   { path: 'admin/list', loadChildren: () => import('./pages/employees/list/list.module').then(m => m.ListModule) },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'rank', component: RankHomeComponent },
+  { path: 'patente', component: PatentesComponent },
 
 ];
 

@@ -33,7 +33,7 @@ import { ProfileFormComponent } from './components/profile-form/profile-form.com
     HeaderAdminComponent,
     MenuTopComponent,
     MenuPerfilComponent,
-    ProfileFormComponent
+    ProfileFormComponent,
   ],
   imports: [
     CommonModule,

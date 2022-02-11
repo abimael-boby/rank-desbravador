@@ -4,4 +4,6 @@ export interface Employee {
   lastName: string;
   email: string;
   startDate: string;
+  pontos?: number;
+  displayName?: string;
 }
